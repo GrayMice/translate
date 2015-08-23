@@ -1,30 +1,23 @@
 .. _LTI Component:
 
 ###############
-LTI Component
+LTI 组件
 ###############
 
-You might have discovered or developed an external learning application that
-you want to add to your online course. Or you might have a digital copy of your
-textbook that uses a format other than PDF. You can add external learning
-applications or textbooks in Studio by using a learning tools interoperability
-(LTI) component. The LTI component is based on the `IMS Global Learning Tools
+你可能已经发现或开发了想要添加到你的在线课程的外部学习应用程序。 或者你有格式不是PDF的电子版教科书。 你可以使用学习工具互通组件，来向Studio添加外部的应用程序或教课书。 LTI 组件是基于 `IMS Global Learning Tools
 Interoperability <http://www.imsglobal.org/LTI/v1p1p1/ltiIMGv1p1p1.html>`_
-version 1.1.1 specifications.
+1.1.1 版本的。
 
-You can use an LTI component in several ways.
+你有多种方式使用LTI组件。
 
-* You can add external LTI content that is only displayed and does not require
-  a student response, such as textbook content.
+* 你可以添加只显示内容，并不需要学生回复的LTI内容，例如教材的内容。
 
-* You can add external LTI content that requires a student response. An
-  external provider will grade student responses.
+* 你也可以添加要求学生回答的LTI内容。 外部的提供者会对学生的回答进行评分。
 
-* You can use the component as a placeholder for syncing with an external
-  grading system.
+* 您可以使用该组件作为一个占位符，用于与外部评分系统同步。
 
-For example, the following LTI component incorporates a Cerego tool that
-students interact with.
+例如，下面的LTI组件包括一个用于学生互动的Cerego工具。
+
 
 .. image:: ../../../shared/building_and_running_chapters/Images/LTIExample.png
    :alt: Cerego LTI component example
@@ -32,16 +25,12 @@ students interact with.
 .. _LTI Information:
 
 ************************
-Obtain LTI Information
+获取 LTI 信息
 ************************
 
-Before you create an LTI component from an external LTI provider in a
-unit, you need the following information.
+在你用外部的LTI供应商创建LTI组件之前，你需要以下信息。
 
--  The **launch URL** (if the LTI component requires a student response
-   that will be graded). You obtain the launch URL from the LTI
-   provider. The launch URL is the URL that Studio sends to the external
-   LTI provider so that the provider can send back students’ grades.
+- **启动 URL** (如果这个LTI组件需要对学生的回答进行评分)。 你从LTI的供应商处获得启动URL。 这个启动URL是Studio发送到外部的供应商，使供应商可以发送回学生的成绩。
 
 - The **LTI Passports** policy key. This policy key has three parts: an LTI ID,
   a client key, and a client secret.
@@ -80,7 +69,7 @@ unit, you need the following information.
   ``book_lti_provider_from_new_york:b289378-f88d-2929-ctools.company.com:yt4984yr8``
 
 ************************
-Create an LTI Component
+创建 LTI 组件
 ************************
 
 Creating an LTI component in your course has three steps.
