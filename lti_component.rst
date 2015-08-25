@@ -33,7 +33,7 @@ Interoperability <http://www.imsglobal.org/LTI/v1p1p1/ltiIMGv1p1p1.html>`_
 - **启动 URL** (如果这个LTI组件需要对学生的回答进行评分)。 你从LTI的供应商处获得启动URL。 这个启动URL是Studio发送到外部的供应商，使供应商可以发送回学生的成绩。
 
 - **LTI 护照** 保险密匙。 这个保险密匙三部分组成: LTI ID,
-   客户端密匙， and a client secret.
+   客户端密匙， 客户端机密。
 
   -  **LTI ID**。 这是你创建引用外部 LTI 供应商的值。 你应该创建一个简单易记的 LTI ID 。
 
@@ -58,8 +58,7 @@ Interoperability <http://www.imsglobal.org/LTI/v1p1p1/ltiIMGv1p1p1.html>`_
 
   ``lti_id:client_key:client_secret``
 
-  For example, an **LTI Passports** policy key can resemble any of the
-  following.
+   **LTI 护照** 保险密匙可以类似下面示例中给出的形式：
 
   ``test_lti_id:b289378-f88d-2929-ctools.school.edu:secret``
   
@@ -73,7 +72,7 @@ Interoperability <http://www.imsglobal.org/LTI/v1p1p1/ltiIMGv1p1p1.html>`_
 
 创建你课程的LTI组件需要三个步骤。
 
-#. Add LTI to the **Advanced Module List**  policy key.
+#. 添加 LTI 到 **高级模块列表**  保险密匙。
 #. 注册LTI供应商。
 #. 在一个单元中创建LTI。
 
