@@ -32,20 +32,20 @@ Interoperability <http://www.imsglobal.org/LTI/v1p1p1/ltiIMGv1p1p1.html>`_
 
 - **启动 URL** (如果这个LTI组件需要对学生的回答进行评分)。 你从LTI的供应商处获得启动URL。 这个启动URL是Studio发送到外部的供应商，使供应商可以发送回学生的成绩。
 
-- **LTI 护照** 保险密匙。 这个保险密匙三部分组成: LTI ID,
-   客户端密匙， 客户端机密。
+- **LTI 护照** 保险密钥。 这个保险密钥三部分组成: LTI ID,
+   客户端密钥， 客户端机密。
 
   -  **LTI ID**。 这是你创建引用外部 LTI 供应商的值。 你应该创建一个简单易记的 LTI ID 。
 
      LTI ID可以包含大写和小写字母数字字符，以及下划线（_）。 它的长度没有限制。 比如你可以创建如 **test_lti_id** 这样简单的LTI ID， 你的LTI ID还可以是一串数字或者一串字母比如  **id_21441** 或者 **book_lti_provider_from_new_york**.
-  -  **客户端密匙**。 该值是您从LTI提供商获取的字符序列。 客户端密钥用于身份验证，并且可以包含任意数量的字符。 例如，你的客户端密匙可能是这个样子： **b289378-f88d-2929-ctools.school.edu** 。
+  -  **客户端密钥**。 该值是您从LTI提供商获取的字符序列。 客户端密钥用于身份验证，并且可以包含任意数量的字符。 例如，你的客户端密钥可能是这个样子： **b289378-f88d-2929-ctools.school.edu** 。
   -  **客户端机密**. T该值是您从LTI提供商获取的字符序列。 客户端密钥用于身份验证，并且可以包含任意数量的字符。 例如，你的客户端机密可以简单如 **secret**， 它还以可以由一串数字或字符组成比如 **23746387264** 和 **yt4984yr8** 。
 
-  按下面的格式结合LTI ID，客户端密匙和客户端机密，来创建 **LTI 护照** 保险密匙 (一定要包括冒号)。
+  按下面的格式结合LTI ID，客户端密钥和客户端机密，来创建 **LTI 护照** 保险密钥 (一定要包括冒号)。
 
   ``lti_id:client_key:client_secret``
 
-   **LTI 护照** 保险密匙可以类似下面示例中给出的形式：
+   **LTI 护照** 保险密钥可以类似下面示例中给出的形式：
 
   ``test_lti_id:b289378-f88d-2929-ctools.school.edu:secret``
   
@@ -59,17 +59,17 @@ Interoperability <http://www.imsglobal.org/LTI/v1p1p1/ltiIMGv1p1p1.html>`_
 
 创建你课程的LTI组件需要三个步骤。
 
-#. 添加 LTI 到 **高级模块列表**  保险密匙。
+#. 添加 LTI 到 **高级模块列表**  保险密钥。
 #. 注册LTI供应商。
 #. 在一个单元中创建LTI。
 
 ======================================================
-步骤1：添加 LTI 到 **高级模块列表**  保险密匙
+步骤1：添加 LTI 到 **高级模块列表**  保险密钥
 ======================================================
 
 #. 点击 **设置** 菜单中的 **高级设置** 。
 
-#. **高级模块列表** 保险密匙的区域中, 将光标放在括号之间。
+#. **高级模块列表** 保险密钥的区域中, 将光标放在括号之间。
 
 #. 输入 ``"lti"``。 确保包括引号，而不是句号。
 
@@ -88,24 +88,19 @@ Interoperability <http://www.imsglobal.org/LTI/v1p1p1/ltiIMGv1p1p1.html>`_
 步骤2：注册LTI供应商
 ==========================================
 
-To register the external LTI provider, you’ll add the **LTI Passports** policy
-key to the course's advanced settings.
+要注册外部的供应商，你需要将 **LTI 护照** 保险密钥添加到课程的高级设置中。
 
-#. On the **Advanced Settings** page, locate the **LTI Passports**
-   policy key.
+#. 在 **高级设置** 页面， **LTI 护照** 保险密钥。
 
 #. 将光标放在括号之间。
 
-#. Enter the **LTI Passports** policy key surrounded by quotation marks.
+#. 在两个引号之间输入 **LTI 护照** 保险密钥。
 
-   For example, the text in the **LTI Passports** field can resemble the
-   following.
+   例如， **LTI 护照** 的文本应该类似于下面的样例：
 
    ``"test_lti_id:b289378-f88d-2929-ctools.umich.edu:secret"``
 
-   If you have multiple LTI providers, separate the values for each **LTI
-   Passports** policy key with a comma. Make sure to surround each entry with
-   quotation marks.
+   如果你有多个LTI供应商，用逗号分隔开每个**LTI 护照** 保险密钥。 确保每个密钥都加上了引号。
 
    .. code-block:: xml
 
@@ -115,7 +110,7 @@ key to the course's advanced settings.
 
 4. 点击页面底部的 **保存更改** 。
 
-页面会自动刷新。 在页面顶部会出现一个显示你已经保存了更改的通知，和 **LTI 护照** 保险密匙的输入框。
+页面会自动刷新。 在页面顶部会出现一个显示你已经保存了更改的通知，和 **LTI 护照** 保险密钥的输入框。
 
 ==========================================
 步骤3：在一个单元中创建LTI
