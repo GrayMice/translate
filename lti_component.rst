@@ -37,24 +37,11 @@ Interoperability <http://www.imsglobal.org/LTI/v1p1p1/ltiIMGv1p1p1.html>`_
 
   -  **LTI ID**。 这是你创建引用外部 LTI 供应商的值。 你应该创建一个简单易记的 LTI ID 。
 
-     The LTI ID can contain uppercase and lowercase alphanumeric characters, as
-     well as underscore characters (_). It can be any length. For example, you
-     can create an LTI ID that is as simple as **test_lti_id**, or your LTI ID
-     can be a string of numbers and letters such as  **id_21441** or
-     **book_lti_provider_from_new_york**.
-  -  The **client key**. This value is a sequence of characters that you
-     obtain from the LTI provider. The client key is used for
-     authentication and can contain any number of characters. For example,
-     your client key may be **b289378-f88d-2929-ctools.school.edu**.
-  -  The **client secret**. This value is a sequence of characters that
-     you obtain from the LTI provider. The client secret is used for
-     authentication and can contain any number of characters. For example,
-     your client secret can be something as simple as **secret**, or it
-     may be a string of numbers and letters such as **23746387264** or
-     **yt4984yr8**.
+     LTI ID可以包含大写和小写字母数字字符，以及下划线（_）。 它的长度没有限制。 比如你可以创建如 **test_lti_id** 这样简单的LTI ID， 你的LTI ID还可以是一串数字或者一串字母比如  **id_21441** 或者 **book_lti_provider_from_new_york**.
+  -  **客户端密匙**。 该值是您从LTI提供商获取的字符序列。 客户端密钥用于身份验证，并且可以包含任意数量的字符。 例如，你的客户端密匙可能是这个样子： **b289378-f88d-2929-ctools.school.edu** 。
+  -  **客户端机密**. T该值是您从LTI提供商获取的字符序列。 客户端密钥用于身份验证，并且可以包含任意数量的字符。 例如，你的客户端机密可以简单如 **secret**， 它还以可以由一串数字或字符组成比如 **23746387264** 和 **yt4984yr8** 。
 
-  To create the **LTI Passports** policy key, combine the LTI ID, client key,
-  and client secret in the following format (make sure to include the colons).
+  按下面的格式结合LTI ID，客户端密匙和客户端机密，来创建 **LTI 护照** 保险密匙 (一定要包括冒号)。
 
   ``lti_id:client_key:client_secret``
 
@@ -77,26 +64,21 @@ Interoperability <http://www.imsglobal.org/LTI/v1p1p1/ltiIMGv1p1p1.html>`_
 #. 在一个单元中创建LTI。
 
 ======================================================
-Step 1. Add LTI to the Advanced Module List Policy Key
+步骤1：添加 LTI 到 **高级模块列表**  保险密匙
 ======================================================
 
-#. On the **Settings** menu, click **Advanced Settings**.
+#. 点击 **设置** 菜单中的 **高级设置** 。
 
-#. In the field for the **Advanced Module List** policy key, place your cursor
-   between the brackets.
+#. **高级模块列表** 保险密匙的区域中, 将光标放在括号之间。
 
-#. Enter ``"lti"``. Make sure to include the quotation marks, but not the
-   period.
+#. 输入 ``"lti"``。 确保包括引号，而不是句号。
 
    .. image:: ../../../shared/building_and_running_chapters/Images/LTIPolicyKey.png
      :width: 500
      :alt: Image of the advanced_modules key in the Advanced Settings page, with the LTI value added
 
 .. note:: 
-   If the **Advanced Module List** field already contains text, place your
-   cursor directly after the closing quotation mark for the final item, and
-   then enter a comma followed by ``"lti"`` (make sure that you include the
-   quotation marks).
+   如果 **高级模块列表** 区域已经有了文本, 直接将光标放在右引号的最后一个项目后，再输入一个逗号，后跟``"lti"`` (请确保你包括引号) 。
 
 4. 点击页面底部的 **保存修改** 。
 
