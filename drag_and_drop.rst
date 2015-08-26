@@ -1,55 +1,37 @@
 .. _Drag and Drop:
 
 ##########################
-Drag and Drop Problem
+拖放问题
 ##########################
 
-In drag and drop problems, students respond to a question by dragging text or
-objects to a specific location on an image.
+在拖放的问题中，学生通过拖动文本或对象到图像的特定位置上来对问题作出回答。
 
 .. image:: ../../../shared/building_and_running_chapters/Images/DragAndDropProblem.png
  :alt: Image of a drag and drop problem
 
 *********************************
-Create a Drag and Drop Problem
+创建一个拖放问题
 *********************************
 
-To create a simple drag and drop problem in which students drag labels onto an
-image, you'll upload the image that you want students to drag labels onto, and
-then create a Problem component.
+要创建一个简单的拖放问题，让学生拖动标签到图像，你需要上传一个图片来让学生在其上拖动标签，之后再创建问题组件。
 
-#. On the **Files & Uploads** page, upload your image file. For more
-   information about uploading files, see :ref:`Add Files to a Course`.
-#. In the unit where you want to create the problem, click **Problem** under
-   **Add New Component**, and then click the **Advanced** tab.
-#. Click **Drag and Drop**.
-#. In the component that appears, click **Edit**.
-#. In the component editor, replace the example text with the text of your
-   problem.
-#. In the ``<drag_and_drop_input>`` tag, replace
-   **https://studio.edx.org/c4x/edX/DemoX/asset/L9_buckets.png** with the URL
-   of your image file on the **Files & Uploads** page (for example,
-   **/static/Image.png**).
-#. For at least one ``<draggable>`` tag, replace the text of the **label**
-   attribute with the text of the label you want students to drag. For example,
-   if you want students to drag the word "Iceland" onto your image, the new tag
-   would resemble the following:
+#. 在 **文件和上传** 页面, 上传你的图片文件。 有关上传文件的详细信息，请参阅 :ref:`Add Files to a Course` 。
+#. 在您要创建问题的单元，点击 **添加新的组件** 中的 **问题** , 然后再点击 **高级** 选项卡。
+#. 点击 **拖放** 。
+#. 点击出现组件中的 **编辑** 。
+#. 用你自己的文本替换组件编辑器中的样例文本。
+#. 用你上传到 **文件和上传** 页面图片的URL来替换``<drag_and_drop_input>`` 标记中的 **https://studio.edx.org/c4x/edX/DemoX/asset/L9_buckets.png** (例如： **/static/Image.png**)。
+#. 对至少一个 ``<draggable>`` 标记，用你希望学生拖动标签中的文字内容来替换 **label** 属性的中的文本。 例如，如果你想让学生单词“Iceland”拖放到您图像上，则新的标签将类似于以下内容：
    
    ``<draggable id="1" label="Iceland"/>``
 
-8. Repeat the previous step for all the labels that you want to use. Make sure
-   that the **id** attribute is different for each ``<draggable>`` tag.
-#. Determine the coordinates and radius of the correct area on the image.
-#. Under ``correct_answer = {``, add an entry for each label, using the
-   following format. These values are in pixels:
+8. 重复上一步直到你设置完了所有需要的标签。 确保每一个``<draggable>`` 标记的 **id** 属性的值都是不同的。
+#. 确定图像上的正确区域的坐标和半径。
+#. 在 ``correct_answer = {``中, 以下面的格式为每个标签添加条目。 这些值以像素为单位：
 
     ``'id':    [[x coordinate, y coordinate], radius]``
 
-    For example, if your image is 600 pixels wide and 400 pixels high, and you
-    want your students to drag the Iceland label to an area in the upper-left
-    part of the image and drag a Sweden label near the lower-right part of your
-    image, the code would resemble the following (where 2 is the ID for the
-    Sweden label):
+    例如,如果你的图片是600像素宽，400像素高， 你希望你的学生到冰岛的标签拖动到一个区域在图像的左上部分，拖动一个瑞典标签靠近图像的右下角部分，该代码将类似于以下 (其中2是瑞典标签的ID):
 
     .. code-block:: xml
 
@@ -57,11 +39,11 @@ then create a Problem component.
                 '1':    [[50, 50], 75]
                 '2':    [[550, 350], 75]}
 
-    .. note:: Make sure the code contains the closing curly brace (**}**). 
-#. Click **Save**.
+    .. note:: 确保代码包含右大括号 (**}**) 。 
+#. 点击 **保存** 。
 
 ==========================================
-Sample Drag and Drop Problem Code
+简单拖放问题的代码
 ==========================================
 
 To create the drag and drop problem that appears in the image above, you'll
@@ -85,7 +67,7 @@ page, and then add the code for the problem to a Problem component.
 #. In the component editor, replace the example code with the following code.
 #. Click **Save**.
 
-**Problem Code**:
+**问题的代码**:
 
 .. code-block:: xml
 
@@ -124,7 +106,7 @@ page, and then add the code for the problem to a Problem component.
 .. _Drag and Drop Problem XML:
 
 *********************************
-Drag and Drop Problem XML
+拖放问题的XML
 *********************************
 
 .. code-block:: xml
@@ -199,7 +181,7 @@ Drag and Drop Problem XML
 
 
 ========
-Tags
+标记
 ========
 
 * ``<customresponse>``: Indicates that the problem is a custom response
