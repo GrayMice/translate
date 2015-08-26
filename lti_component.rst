@@ -32,8 +32,8 @@ Interoperability <http://www.imsglobal.org/LTI/v1p1p1/ltiIMGv1p1p1.html>`_
 
 -  **启动 URL** (如果这个LTI组件需要对学生的回答进行评分)。 你从LTI的供应商处获得启动URL。 这个启动URL是Studio发送到外部的供应商，使供应商可以发送回学生的成绩。
 
-- **LTI 护照** 保险密钥。 这个保险密钥三部分组成: LTI ID,
-   客户端密钥， 客户端机密。
+- **LTI 护照** 保险密钥。 
+这个保险密钥三部分组成: LTI ID, 客户端密钥， 客户端机密。
 
   -  **LTI ID**。 这是你创建引用外部 LTI 供应商的值。 你应该创建一个简单易记的 LTI ID 。
 
