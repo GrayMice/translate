@@ -46,26 +46,21 @@
 简单拖放问题的代码
 ==========================================
 
-To create the drag and drop problem that appears in the image above, you'll
-download two files from edX, upload these files to to the **Files & Uploads**
-page, and then add the code for the problem to a Problem component.
+要创建出现上面图片中的拖放问题，你需要从edX上下载两个文件，并将这些文件上传到 **文件和上传** 的页面中, 然后添加这个问题的代码到一个问题组件中去。
 
-#. Download the following files from edX:
+#. 从 edX 上下载这些文件:
 
   * Allopurinol.gif
   * AllopurinolAnswer.gif
 
-  To download both these files in a .zip archive, click
-  http://files.edx.org/DragAndDropProblemFiles.zip.
+  点击 http://files.edx.org/DragAndDropProblemFiles.zip 下载包含这两个文件的压缩包。
 
-2. Upload the Allopurinol.gif and AllopurinolAnswer.gif files to the **Files &
-   Uploads** page.
-#. In the unit where you want to create the problem, click **Problem** under
-   **Add New Component**, and then click the **Advanced** tab.
-#. Click **Drag and Drop**.
-#. In the component that appears, click **Edit**.
-#. In the component editor, replace the example code with the following code.
-#. Click **Save**.
+2. 上传 Allopurinol.gif 和 AllopurinolAnswer.gif 这两个文件到 **文件和上传** 页面。
+#. 在你想要添加问题的位置，点击 **添加新的组件** 中的 **问题**  然后再点击 **高级** 选项卡 。
+#. 点击 **拖放** 。
+#. 点击出现组件中的 **编辑** 。
+#. 在组件编辑器中用下面的代码替换示例代码。
+#. 点击 **保存** 。
 
 **问题的代码**:
 
@@ -184,116 +179,100 @@ page, and then add the code for the problem to a Problem component.
 标记
 ========
 
-* ``<customresponse>``: Indicates that the problem is a custom response
-  problem.
-* ``<drag_and_drop_input>``: Indicates the custom response problem is a drag
-  and drop problem.
-* ``<draggable>``: Specifies a single object that a student will drag onto the
-  base image.
-* ``<target>``: Specifies the location on the base image where a draggable must
-  be dropped.
+* ``<customresponse>``: 表示该问题是一个自定义回答问题。
 
-**Tag:** ``<drag_and_drop_input>``
+* ``<drag_and_drop_input>``: 表示自定义回答问题是一个拖放问题。
 
-  Attributes
+* ``<draggable>``: 指定学生将拖到基础图像中的一个对象。
+
+* ``<target>``: 指定拖拽元素在基本图片上所要放置的位置。
+
+**标记:** ``<drag_and_drop_input>``
+
+  属性
 
   .. list-table::
      :widths: 20 80
      :header-rows: 1
 
-     * - Attribute
-       - Description
-     * - img (required)
-       - Relative path to an image that will be the base image. All draggables
-         can be dragged onto it.
+     * - 属性
+       - 说明
+     * - img (必要的)
+       - 将成为基本图像的图片的相对路径。 所有的拖拽元素可以拖动到它。
      * - target_outline 
-       - Specifies whether an outline (gray dashed line) should be drawn around
-         targets (if they are specified). It can be either 'true' or 'false'.
-         If not specified, the targets do not have outlines.
+       - 指定 目标周围 (如果指定了它们) 是否画出轮廓线 (灰色虚线)。 它的值可以是'true' 或者 'false'。
+         如果没有指定则目标没有轮廓线。
      * - one_per_target 
-       - Specify whether to allow more than one draggable to be placed onto a
-         single target. It can be either 'true' or 'false'. If not specified,
-         the default value is 'true'.
-     * - no_labels (required)
-       - The default is false. In default behavior, if label is not set, label is
-         obtained from id. If no_labels is true, labels are not automatically
-         populated from id, and one cannot set labels and obtain only icons.
+       - 指定是否允许多余于一个拖拽元素被放置在同一个目标中。 的值可以是'true' 或者 'false'。
+         如果没有指定，默认值是 'true'.
+     * - no_labels (必要的)
+       - 默认值是 false 。 默认行为中，如果标签没有设置，标签从ID获得。 如果 no_labels 设置为 true ，那么标签不会自动由ID生成，一个不能设置标签，将获得唯一的图标。
 
-  Children
+  子标记
 
      * ``<draggable>``
      * ``<target>``
 
-**Tag:** ``<draggable>``
+**标记:** ``<draggable>``
 
-Specifies a single draggable object in a drag and drop problem.
+指定拖放问题中的一个拖拽元素。
 
-A draggable is what the user must drag out of the slider and drop onto the base
-image. After a drag operation, if the center of the draggable is located
-outside the rectangular dimensions of the image, it will be returned to the
-slider.
+拖拽元素是用户必须拖出滑块并拖放到基本图像上。 完成拖动操作后，如果拖拽元素的中心位于图像矩形区域之外，它将被退回滑块中去。
 
-For the grader to work, each draggable must have a unique ID.
+为了便于评分，每个拖拽元素都要有唯一的ID。
 
-  Attributes
+  属性
 
   .. list-table::
      :widths: 20 80
      :header-rows: 1
 
-     * - Attribute
-       - Description
-     * - id (required)
-       - Unique identifier of the draggable object.
-     * - label (optional)
-       - Text label that the user sees.
-     * - icon (optional)
-       - For draggables that are images, the relative path to the image file.
+     * - 属性
+       - 说明
+     * - id (必须的)
+       - 拖拽元素唯一的标识。
+     * - label (可选的)
+       - 用户可以看到的文本标签。
+     * - icon (可选的)
+       - 当拖拽元素是图片时，图片文件的相对路径。
      * - can_reuse
-       - The default is false. If true, the same draggable can be used
-         multiple times.
+       - 默认情况下为false。 如果设置为true，则同一个拖拽元素可以使用多次。
 
-  Children
+  子标记
   
-  (none)
+  (无)
 
-**Tag:** ``<target>``
+**标记:** ``<target>``
 
-Specifies the location on the base image where a student must drop a draggable
-item. By design, if the center of a draggable lies within the target (i.e. in
-the rectangle defined by [[x, y], [x + w, y + h]],  it is within the target.
-Otherwise, it is outside.
+指定基本图片上学生必须放置拖拽元素的位置。 按照设计如果拖拽元素的中心在目标区域之内，即在由 [[x, y], [x + w, y + h]] 所指定的矩形区域内，则该元素在目标区域内。
+否则就在目标区域之外。
 
-If you specify at least one target, and a student drops a draggable item on a
-location that is outside a target, the draggable item returns to the slider.
+如果你至少指定了一个目标，当学生将拖拽元素拖放到目标之外时，拖拽元素会被退回到滑块中。
 
-If you don't specify a target, a student can drop a draggable item anywhere on
-the base image.
+如果你没有指定目标区域，学生可以把拖拽元素放到基本图片上的任何位置。
 
-  Attributes
+  属性
 
   .. list-table::
      :widths: 20 80
      :header-rows: 1
 
-     * - Attribute
-       - Description
-     * - id (required)
-       - Unique identifier of the target object.
+     * - 属性
+       - 说明
+     * - id (必须的)
+       - 拖拽元素唯一的标识。
      * - x
-       - X-coordinate on the base image where the top left corner of the target
-         will be positioned.
+       - 目标区域的左上角将定位在基本图像上的X坐标。
      * - y
-       - Y-coordinate on the base image where the top left corner of the target
-         will be positioned.
+       - 目标区域的左上角将定位在基本图像上的Y坐标。
      * - w
-       - Width of the target, in pixels.
+       - 目标区域的宽度，以像素为单位。
      * - h
-       - Height of the target, in pixels.
+       - 目标区域的高度，以像素为单位。
 
-  Children
+  子标记
 
-  (none)
+  (无)
 
 **********************
 Targets on Draggables
