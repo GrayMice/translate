@@ -6,7 +6,7 @@
 
 学生可以通过分子编辑器来学习如何创造分子。 分子编辑器允许学生画遵循共价键的形成和形式电荷规则的分子，即使这些分子在化学上是不可能的存在的，不稳定的，或者不存在于自然界之中。 如果学生试图提交一个不可能的化学结构，分子编辑器便会发出警告。
 
-分子编辑器集成了两个工具:由Peter Erl和Bruno Bienfait开发的JSME分子编辑器, 以及由Jmol开发的基于JavaScript的分子查看器JSmol。 (你不需要下载这两个工具，编辑器自动使用这两个程序) 获得更多JSME分子编辑器的信息， 请点击 `JSME Molecule Editor <http://peter-ertl.com/jsme/index.html>`_.  获得更多关于JSmol分子查看器的信息，请点击`JSmol <http://sourceforge.net/projects/jsmol/>`_.
+分子编辑器集成了两个工具:由Peter Erl和Bruno Bienfait开发的JSME分子编辑器, 以及由Jmol开发的基于JavaScript的分子浏览器JSmol。 (你不需要下载这两个工具，编辑器自动使用这两个程序) 获得更多JSME分子编辑器的信息， 请点击 `JSME Molecule Editor <http://peter-ertl.com/jsme/index.html>`_.  获得更多关于JSmol分子浏览器的信息，请点击`JSmol <http://sourceforge.net/projects/jsmol/>`_.
 
 .. image:: ../../../shared/building_and_running_chapters/Images/Molecule_Editor.png
   :alt: Image of the molecule editor
