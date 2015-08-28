@@ -275,13 +275,10 @@
   (无)
 
 **********************
-Targets on Draggables
+拖拽元素目标
 **********************
 
-Sometimes it is not enough to have targets only on the base image, and all of
-the draggables on these targets. If a complex problem exists where a draggable
-must become itself a target (or many targets), then the following extended
-syntax can be used.
+有时只把基本图片作为目标是不够的，所有的拖拽元素也可以成为目标。 在一个复杂问题中，其中一个拖拽元素本身必须成为一个目标（或者多个目标），则可以使用下面的扩展语法。
 
 ::
 
@@ -294,56 +291,41 @@ syntax can be used.
     </draggable>
     ...
 
-The attribute list in the tags above (``draggable`` and ``target``) is the same
-as for normal ``draggable`` and ``target`` tags. The only difference is when
-you will be specifying inner target position coordinates. Use the ``x`` and
-``y`` attributes to set the offset of the inner target from the upper-left
-corner of the parent draggable (that contains the inner target).
+上面标记中的 (``draggable`` and ``target``) 属性和正常的 ``draggable`` and ``target`` 标记是一样的。 唯一的区别是你指定内部目标位置坐标的方法。 用 ``x`` 和
+``y`` 属性来设定内部目标到父元素左上角的偏移量 (包含内部目标)。
 
 =====================================
-Limitations of targets on draggables
+拖拽元素目标的限制
 =====================================
 
-* Currently there is a limitation to the level of nesting of targets.
+* 目前有目标嵌套层数的限制。
 
-  Even though you can pile up a large number of draggables on targets that
-  themselves are on draggables, the Drag and Drop problem will be graded only
-  if there is a maximum of two levels of targets. The first level are the
-  `base` targets. They are attached to the base image. The second level are the
-  targets defined on draggables.
+  即使你可以在拖拽元素上堆放大量的拖拽元素目标， 拖放问题也只能最多识别两层嵌套的目标。 第一层是 `基础` 目标。 他们在基础图片上。 第二层是定义在拖拽元素上的目标。
 
-* Another limitation is that the target bounds are not checked against other
-  targets.
+* 另一个限制是，在目标范围不针对其他目标检查。
 
-  You must make sure that there is no overlapping of targets. You should also
-  ensure that targets on draggables are smaller than the actual parent
-  draggable. Technically this is not necessary, but from the usability
-  perspective it is desirable.
+  你必须确保有目标没有重叠。 你也应该确保拖拽元素目标比它的父拖动元素大小要小。 技术上，这是没有必要的，但是从可用性的角度看，它是有必要的。
 
-* You can have targets on draggables only in the case when there are base
-  targets defined (base targets are attached to the base image).
+* 只有定义了基本目标，你猜可以定义拖拽元素目标 ( 基础目标在基础图片上) 。
 
-  If you do not have base targets, then you can only have a single level of
-  nesting (draggables on the base image). In this case the client side will be
-  reporting (x,y) positions of each draggable on the base image.
+  如果你没有基础的目标，那么你只能有嵌套一个级别 (基础图片上的拖拽元素)。 在这种情况下，客户端将报告每个拖拽元素在基本图像上位置的坐标（X，Y）。
 
 **********************
-Correct answer format
+正确答案格式
 **********************
 
-For specifying answers for targets on draggables, see `Answer format for
+为目标的拖拽元素指定答案，请参阅 `Answer format for
 targets on draggables`_.
 
-There are two correct answer formats: short and long.
+有两种正确答案的格式：详细形式和简短形式。
 
-In short form, the correct answer is mapping of ``draggable_id`` to
-``target_id``::
+简短形式的正确答案是 ``draggable_id`` 到 ``target_id``的映射::
 
     correct_answer = {'grass':     [[300, 200], 200], 'ant': [[500, 0], 200]}
     correct_answer = {'name4': 't1', '7': 't2'}
 
-In long form, the correct answer is list of dicts. Every dict has 3 keys:
-``draggables``, ``targets`` and ``rule``. For example::
+详细形式的答案是一个字典列表。 每个字典有三个要素：
+``拖拽元素``, ``目标`` and ``规则`` 。 例如::
 
     correct_answer = [
     {
@@ -357,8 +339,7 @@ In long form, the correct answer is list of dicts. Every dict has 3 keys:
       'rule': 'anyof'
     }]
 
-"Draggables" is the list of draggable IDs. "Target" is the list of target IDs
-that draggables must be dragged to.
+"拖拽元素" 是拖拽元素ID的列表。 "目标" 是ID列表中的拖拽元素所要被放置的位置。
 
 .. Caution::
   Draggables in dicts inside the ``correct_answer`` list must not intersect.
@@ -464,7 +445,7 @@ If ``can_reuse=true``, then you must use only the long form of the correct
 answer.
 
 =======================================
-Answer format for targets on draggables
+拖拽元素目标的答案格式
 =======================================
 
 As with the cases described above, an answer must provide precise positioning
@@ -516,7 +497,7 @@ Note that you must specify rules for all draggables, even if a draggable gets
 included in more than one chain.
 
 *************
-Grading logic
+评分逻辑
 *************
 
 #. The student's answer and the correct answer are parsed to the same format.
@@ -546,7 +527,7 @@ Grading logic
    group.
 
 ==========================
-Set and ``+number`` cases
+设置和 ``+number`` 事件
 ==========================
 
 ``set()`` and ``+number`` are needed only for the case of reusable draggables.
