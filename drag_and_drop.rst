@@ -341,10 +341,10 @@ targets on draggables`_.
 
 "拖拽元素" 是拖拽元素ID的列表。 "目标" 是ID列表中的拖拽元素所要被放置的位置。
 
-.. Caution::
-  Draggables in dicts inside the ``correct_answer`` list must not intersect.
+.. 注意::
+   ``正确答案`` 列表中的拖拽元素不能相同。
 
-Wrong (for draggable id 7)::
+错误 (因为拖拽元素的id 7重复了)::
 
     correct_answer = [
     {
@@ -358,11 +358,9 @@ Wrong (for draggable id 7)::
       'rule': 'anyof'
     }]
 
-The values for ``rule`` follow. 
+ ``规则`` 值如下。
 
-* ``exact``: Targets for draggable IDs in ``user_answer`` are the same as
-  targets from the correct answer. For example, for draggables 7 and 8, the
-  user must drag 7 to target1 and 8 to target2 if the ``correct_answer`` is::
+* ``准确``:  ``用户答案`` 的拖拽元素对应的目标，必须和正确答案的相同。 例如，如果 ``正确答案`` 设置如下，那么对于拖拽元素7和8，用户必须将拖拽元素7拖到目标1，将拖拽元素8拖到目标2::
 
     correct_answer = [
       {
@@ -372,9 +370,7 @@ The values for ``rule`` follow.
     }]
 
 
-* ``unordered_equal``: Allows draggables be dragged to targets unordered. For
-  students to drag 7 to target1 or target2 and 8 to target2 or target1 and 7
-  and 8 must be in different targets, then correct answer must be::
+* ``无序``: 允许拖拽元素不按顺序被拖放到目标中。 如果学生要把拖拽元素7和8分别放到目标1,2中，且7,8必须放在不同的目标中，那么正确答案为::
 
     correct_answer = [
     {
@@ -384,9 +380,7 @@ The values for ``rule`` follow.
     }]
 
 
-* ``anyof``: Allows draggables to be dragged to any target. For students to
-  drag 7 and 8 to target1 or target2, any of these are correct with the `anyof`
-  rule::
+* ``任意``: 允许拖拽元素被放置任意目标处。 在 `任意` 规则下，学生把拖拽元素7和8拖到目标1或2中的任意一个均正确::
 
     correct_answer = [
     {
@@ -395,11 +389,7 @@ The values for ``rule`` follow.
       'rule': 'anyof'
     }]
 
-If ``can_reuse`` is true, then you have draggables a,b,c and 10 targets. These
-will allow you to drag 4 ``a`` draggables to [``target1``,  ``target4``,
-``target7``, ``target10``]; you do not need to write ``a`` four times. Also
-this will allow you to drag the ``b`` draggable to target2 or target5 for
-target5 and target2.::
+如果 ``可重用`` 为true， 你有拖拽元素a,b,c和10个目标。 这时你可以将4个拖拽元素 ``a`` 放置到 [``目标1``,  ``目标4``, ``目标7``, ``目标10``]； 而不用重复地写四个 ``a`` 。 这也允许你将拖拽元素 ``b``拖动到目标2和目标5，或者目标5和目标2::
 
     correct_answer = [
         {
@@ -418,8 +408,7 @@ target5 and target2.::
           'rule': 'unordered_equal'
         }]
 
-Sometimes you want to allow students to drag only two ``b`` draggables. In this
-case you should use the ``anyof+number`` or ``unordered_equal+number`` rule::
+有时你只想让学生移动两个 ``b`` 拖拽元素。 在这种情况下你要使用 ``任意和数字`` 或者 ``无序和数字`` 规则::
 
     correct_answer = [
         {
@@ -438,27 +427,19 @@ case you should use the ``anyof+number`` or ``unordered_equal+number`` rule::
           'rule': 'unordered_equal'
         }]
 
-When there are no multiple draggables per targets (one_per_target=``true``),
-for the same number of draggables, ``anyof`` is equal to ``unordered_equal``.
+当每个目标没有多重拖拽元素 (one_per_target=``true``)，
+对相同的拖拽元素数， ``任意`` 和 ``无序`` 是等价的。
 
-If ``can_reuse=true``, then you must use only the long form of the correct
-answer.
+如果 ``can_reuse=true``,你必须使用详细形式的正确答案。
 
 =======================================
 拖拽元素目标的答案格式
 =======================================
 
-As with the cases described above, an answer must provide precise positioning
-for each draggable (on which targets it must reside). In the case when a
-draggable must be placed on a target that itself is on a draggable, then the
-answer must contain the chain of target-draggable-target.
+在上述的情况下， 答案必须提供每个拖拽元素的精确定位。 (对必须驻留的目标)。 当拖拽元素需要被拖放到本身也是拖放元素的目标上时，答案必须包括 目标-拖拽元素-目标 链。
 
-For example, suppose we have three draggables - ``up``, ``s``, and ``p``.
-Draggables ``s`` and ``p`` have targets on themselves. More specifically,
-``p`` has three targets - ``1``, ``2``, and ``3``. The first requirement is
-that ``s`` and ``p`` are positioned on specific targets on the base image. The
-second requirement is that draggable ``up`` is positioned on specific targets
-of draggable ``p``. Below is an excerpt from a problem::
+例如，假设我们有三个拖拽元素 - ``up``, ``s``, 和 ``p``。
+拖拽元素 ``s`` 和 ``p`` 还是目标。 更具体的， ``p`` 有三个目标 - ``1``, ``2``, 和 ``3``。 第一个要求是 ``s`` 和 ``p`` 被正确放置在基础图片上的指定位置。 第二个要求是拖拽元素 ``up`` 被放在指定的目标 ``p`` 上。  下面是一个问题的节选::
 
     <draggable id="up" icon="/static/images/images_list/lcao-mo/up.png" can_reuse="true" />
 
@@ -493,48 +474,41 @@ of draggable ``p``. Below is an excerpt from a problem::
         }
     ]
 
-Note that you must specify rules for all draggables, even if a draggable gets
-included in more than one chain.
+注意！你必须为每一个拖拽元素指定规则，即使有拖拽元素包含在多个链中。
 
 *************
 评分逻辑
 *************
 
-#. The student's answer and the correct answer are parsed to the same format.
+#. 学生的答案和正确答案有着几乎相同的格式。
    ::
 
     group_id: group_draggables, group_targets, group_rule
 
-  ``group_id`` is ordinal number, for every dict in correct answer incremental
-  ``group_id`` is assigned: 0, 1, 2, ...
+  ``group_id`` 是序数，用来记录每个正确答案中字典的增量。
+  ``group_id`` 是被分配: 0, 1, 2, ...
 
-  Draggables from the user answer are added to the same group_id where
-  identical draggables from the correct answer are, for example::
+  用户答案中的拖拽元素被添加到和正确答案中的拖拽元素具有相同group_id的组中，例如::
 
-    If correct_draggables[group_0] = [t1, t2] then
-    user_draggables[group_0] are all draggables t1 and t2 from the user answer:
+    如果正确答案拖拽元素组[group_0] = [t1, t2] 那么用户拖拽元素组[group_0]就是用户答案中所有的拖拽元素 t1 和 t2 :
     [t1] or [t1, t2] or [t1, t2, t2] etc..
 
-2. For every group from the user answer, for that group's draggables, if
-   ``number`` is in the group rule, set() is applied. If ``number`` is not in
-   rule, set is not applied::
+2. 对于每个用户答案组中的拖拽元素， 如果 ``数字`` 在组的规则中， 那么set()会被应用。 如果 ``数字`` 不在规则中，则不会被应用::
 
     set() : [t1, t2, t3, t3] -> [t1, t2, ,t3]
 
-  For every group, at this step, draggables lists are equal.
+  对于每一个组，在这个步，拖拽元素列表是相等的。
 
-3. For every group, lists of targets are compared using the rule for that
-   group.
+3. 对于每一个组，目标列表是使用该组的规则进行比较。
 
 ==========================
-设置和 ``+number`` 事件
+``set()`` 和 ``数字`` 事件
 ==========================
 
-``set()`` and ``+number`` are needed only for the case of reusable draggables.
-For other cases there are no equal draggables in list, so set() does nothing.
+``set()`` and ``+number`` 仅用于有可重复使用的拖拽元素的情况。
+其他情况下，有在列表中没有相等的拖拽元素，所以 set() 什么效果都没有。
 
-* The ``set()`` operation allows you to create a rule for the case of "any
-  number of the same draggable can be dragged to targets"::
+*  ``set()`` 操作允许你创造一个规则来规定 "任何数量相同的拖拽元素可以拖动到目标"::
 
     {
       'draggables': ['draggable_1'],
@@ -542,9 +516,7 @@ For other cases there are no equal draggables in list, so set() does nothing.
       'rule': 'anyof'
     }
 
-* The ``number`` rule is used for the case of reusable draggables, when you
-  want to fix number of draggable to drag. In this example only two instances
-  of draggables_1 are allowed to be dragged::
+* ``数字`` 规则被用于有可重复使用的拖拽元素的情况中，来修复修复拖动的拖动元素数量。 在本实施例只有两个实例draggables_1的允许被拖动::
 
     {
       'draggables': ['draggable_1', 'draggable_1'],
@@ -553,9 +525,7 @@ For other cases there are no equal draggables in list, so set() does nothing.
     }
 
 
-* Note, that in using rule ``exact``, one does not need ``number``, because you
-  cannot recognize from the user interface which reusable draggable is on which
-  target. For example::
+* 注意！ 在使用 ``准确``规则的情况下，是不需要 ``数字``规则的。 因为你不能从用户界面识别可重复使用的拖拽元素是哪个目标的。 例如::
 
     {
       'draggables': ['draggable_1', 'draggable_1', 'draggable_2'],
@@ -564,12 +534,9 @@ For other cases there are no equal draggables in list, so set() does nothing.
     }
 
 
-    Correct handling of this example is to create different rules for
-    draggable_1 and draggable_2.
+    本实例的正确处理是分别对 draggable_1 和 draggable_2 创建不同的规则。
 
-* For ``unordered_equal`` (or ``exact``) you don't need ``number`` if you have
-  only the same draggable in the group, as the target length will provide
-  the constraint for the number of draggables::
+* 对于 ``无序`` (或者 ``准确``) 你不需要 ``数字``。 如果你只有相同的拖拽元素在组中，目标长度将提供对拖拽元素数量的约束::
 
     {
       'draggables': ['draggable_1'],
@@ -577,10 +544,9 @@ For other cases there are no equal draggables in list, so set() does nothing.
       'rule': 'unordered_equal'
     }
 
-  This means that only ``draggable_1`` can be dragged.
+  这意味着仅有 ``draggable_1`` 可以被拖拽。
 
-* But if you have more than one different reusable draggable in the list, you
-  may use the ``number`` rule::
+* 但是，如果你有多个不同的可重复使用的拖拽元素在列表中，你可以使用``number``规则::
 
     {
       'draggables': ['draggable_1', 'draggable_1', 'draggable_2'],
@@ -588,5 +554,4 @@ For other cases there are no equal draggables in list, so set() does nothing.
       'rule': 'unordered_equal+number'
     }
 
-If you do not use ``number``, the draggables list will be set to
-[``draggable_1``, ``draggable_2``].
+如果你没有使用 ``数字``， 那么拖拽元素列表会被设置成[``draggable_1``, ``draggable_2``]。
