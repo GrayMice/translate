@@ -4,7 +4,7 @@
 拖放问题
 ##########################
 
-在拖放的问题中，学生通过拖动文本或对象到图像的特定位置上来对问题作出回答。
+在拖放的问题中，学生通过拖动文本或拖拽元素到图像的特定位置上来对问题作出回答。
 
 .. image:: ../../../shared/building_and_running_chapters/Images/DragAndDropProblem.png
  :alt: Image of a drag and drop problem
