@@ -4,7 +4,7 @@
 分子浏览器
 #######################
 
-系统提供了可以在关于分子讨论中使用两个工具：
+系统提供了可以在关于分子的讨论中使用两个工具：
 
 * 借助 **分子浏览器** 你可以生成分子的三维模型给学生观看。 
 * 借助 **分子编辑器** 的问题模式， 你可以让自己的学生画出自己设计的分子。 有关此工具的更多信息，请参阅 :ref:`Molecule Editor`。
@@ -53,7 +53,7 @@
 移动 .mol 文件并编辑 MoleculeViewer.html 文件
 ================================================================
 
-#. 将你从 BioTopics 下载的 .mol 文件移动到  into the **data** folder that you downloaded from edX.
+#. 将你从 BioTopics 下载的 .mol 文件移动到你从edX上下载的 **data** 文件夹中。
 #. 编辑 MoleculeViewer.html 文件:
 
    #. 在文本编辑器中打开MoleculeViewer.html文件。

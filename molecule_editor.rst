@@ -4,7 +4,7 @@
 分子编辑器
 #######################
 
-学生可以通过分子编辑器来学习如何创造分子。 分子编辑器允许学生画遵循共价键的形成和形式电荷规则的分子，即使这些分子在化学上是不可能的存在的，不稳定的，或者不存在于自然界之中。 如果学生试图提交一个不可能的化学结构，分子编辑器便会发出警告。
+学生可以通过分子编辑器来学习如何创造分子。 分子编辑器允许学生画出遵循共价键形成和形式电荷规则的分子，即使这些分子在化学上是不可能的存在的，不稳定的，或者不存在于自然界之中。 如果学生试图提交一个不可能存在的化学结构，分子编辑器便会发出警告。
 
 分子编辑器集成了两个工具:由Peter Erl和Bruno Bienfait开发的JSME分子编辑器, 以及由Jmol开发的基于JavaScript的分子浏览器JSmol。 (你不需要下载这两个工具，编辑器自动使用这两个程序) 获得更多JSME分子编辑器的信息， 请点击 `JSME Molecule Editor <http://peter-ertl.com/jsme/index.html>`_.  获得更多关于JSmol分子浏览器的信息，请点击`JSmol <http://sourceforge.net/projects/jsmol/>`_.
 
@@ -23,19 +23,19 @@
 * MoleculeEditor_HTML.png
 * dopamine.mol
 
-要下载包含所有这些文件的.zip文件，请前往 http://files.edx.org/MoleculeEditorFiles.zip.
+前往 http://files.edx.org/MoleculeEditorFiles.zip 下载包含所有这些文件的.zip文件。
 
-.. note:: 该工具启动时出现的分子是多巴胺分子。 如果想要使用不同的分子, 只需从 `BioTopics <http://www.biotopics.co.uk/>`_  网站的 `list of molecules <http://www.biotopics.co.uk/jsmol/molecules/>`_ 上下载你需要分子对应的.mol文件，然后， 上传 .mol 文件到你课程中的 **文件和上传** 页面，再修改示例代码中的 "dopamine.mol" 为你所要的分子的 .mol 文件名即可。
+.. note:: 该工具启动时出现的分子是多巴胺分子。 如果想要使用不同的分子, 只需从 `BioTopics <http://www.biotopics.co.uk/>`_  网站的 `list of molecules <http://www.biotopics.co.uk/jsmol/molecules/>`_ 下载你需要分子对应的.mol文件，然后， 上传 .mol 文件到你课程中的 **文件和上传** 页面，再修改示例代码中的 "dopamine.mol" 为你所要的分子的 .mol 文件名即可。
 
-要创建上面显示的图像中的分子编辑器，你需要一个HTML组件以及一个问题的组件。
+要创建上面图片中展示的分子编辑器，你需要一个HTML组件以及一个问题的组件。
 
 #. 上传所有在你课程的 **文件和上传** 页面上方列出的文件。
 #. 创建HTML组件。
 
-  #. 在你要创建问题的创建问题的位置，点击 **添加新组件** 下面的 **HTML** ， 然后再点击  **HTML**.
-  #. 点击出现组件中的 **编辑**.
+  #. 在你要创建问题的创建问题的位置，点击 **添加新组件** 下面的 **HTML** ， 然后再点击  **HTML**。
+  #. 点击出现组件中的 **编辑** 。
   #. 在组件编辑器中，粘贴下面的HTML组件代码。
-  #. 做出你想要的任何更改，然后单击 **保存**.
+  #. 做出你想要的任何更改，然后单击 **保存** 。
 
 3. 创建问题组件。
 
